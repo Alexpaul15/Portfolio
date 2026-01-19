@@ -47,6 +47,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Used on mobile when the menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
