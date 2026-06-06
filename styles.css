@@ -860,13 +860,18 @@ body {
 }
 
 /* ---- REVEAL ANIMATION ---- */
+/* Content visible by default — JS adds animation when supported */
 .reveal {
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity .65s cubic-bezier(.4,0,.2,1),
                 transform .65s cubic-bezier(.4,0,.2,1);
 }
-.reveal.visible {
+html.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+}
+html.js .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }

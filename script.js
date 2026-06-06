@@ -4,6 +4,9 @@
 
 'use strict';
 
+/* Enable progressive enhancement — content visible without JS */
+document.documentElement.classList.add('js');
+
 /* ---- CUSTOM CURSOR ---- */
 (function initCursor() {
     const cursor = document.getElementById('cursor');
@@ -256,6 +259,11 @@
         el.style.transitionDelay = (i % 4) * 0.08 + 's';
         obs.observe(el);
     });
+
+    // Fallback: ensure content is never permanently hidden
+    setTimeout(() => {
+        els.forEach(el => el.classList.add('visible'));
+    }, 2500);
 })();
 
 /* ---- ACTIVE NAV LINK ---- */
