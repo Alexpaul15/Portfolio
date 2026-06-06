@@ -3,702 +3,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Alex Samuel | AI Engineer - Generative AI & Cloud AI Systems</title>
+    <title>Paul Alex Samuel &mdash; AI Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <span class="brand-text">Paul Alex Samuel</span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">PaulAlex</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
             </ul>
-            <div class="nav-actions">
-                <a href="#resume" class="btn-nav">Resume</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="Pasala_Paul_Alex_Samuel_John_AI_Engineer.pdf" download class="nav-cta">
+                <i class="fas fa-download"></i>
+                Resume
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>Pasala Paul Alex Samuel John &middot; AI Engineer</span>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="hero-inner">
+            <div class="hero-tag">
+                <span class="tag-dot"></span>
+                Available for opportunities
+            </div>
+
+            <p class="hero-greeting">Hi, I'm</p>
+            <h1 class="hero-name">Paul Alex Samuel</h1>
+
+            <div class="hero-role-wrap">
+                <span class="hero-role-prefix">I build &nbsp;</span>
+                <span class="hero-typewriter" id="typewriter"></span>
+                <span class="hero-cursor-blink">|</span>
+            </div>
+
+            <p class="hero-desc">
+                AI Engineer with <strong>2+ years</strong> crafting enterprise-grade
+                <strong>Generative AI systems</strong>, <strong>RAG pipelines</strong>,
+                and <strong>multi-agent architectures</strong> on Azure, AWS &amp; GCP.
+            </p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="2">0</span><span class="hero-stat-num-suffix">+</span>
+                    <span class="hero-stat-label">Years Exp.</span>
                 </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Building Intelligent</span>
-                    <span class="title-line highlight">AI Systems</span>
-                    <span class="title-line">That Transform Business</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Specializing in <strong>Generative AI</strong>, <strong>RAG Pipelines</strong>, and 
-                    <strong>Multi-Agent Architectures</strong>. Turning complex AI concepts into 
-                    production-ready solutions.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">40%</div>
-                        <div class="stat-label">Efficiency Gains</div>
-                    </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-num-suffix">+</span>
+                    <span class="hero-stat-label">Projects</span>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#resume" class="btn btn-secondary">
-                        <i class="fas fa-download"></i>
-                        <span>Download Resume</span>
-                    </a>
-                </div>
-                <div class="hero-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Bengaluru / Hyderabad, India</span>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="40">0</span><span class="hero-stat-num-suffix">%</span>
+                    <span class="hero-stat-label">Efficiency Gain</span>
                 </div>
             </div>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary-hero">
+                    View My Work
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn-ghost-hero">
+                    Let's Talk
+                </a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://github.com/Alexpaul15" target="_blank" class="hero-social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/paul-alex-samuel-pasala-735a9526b" target="_blank" class="hero-social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:paul.alexsamuel17@gmail.com" class="hero-social-icon" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
-        <div class="scroll-indicator">
+
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
             <span>Scroll</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">01</span>
-                <h2 class="section-title">About Me</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>01 &mdash; About</span>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">
-                        I'm an <strong>AI Engineer</strong> with <strong>2+ years of hands-on experience</strong> 
-                        building <strong>Generative AI and cloud-native AI systems</strong>. I've delivered 
-                        enterprise-grade solutions across <strong>full-time roles and internships</strong> 
-                        that solve real business problems at scale.
+            <h2 class="section-heading reveal">Turning AI Research<br>into Real Products</h2>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm an <span class="text-accent">AI Engineer</span> from Bengaluru / Hyderabad, India,
+                        with a deep focus on building intelligent systems that solve real enterprise problems.
+                        Over <span class="text-accent">2+ years</span> I've moved from intern to full-time
+                        engineer to co-founder, shipping production AI at every stage.
                     </p>
                     <p>
-                        My expertise spans <strong>LLM-based systems</strong>, <strong>RAG pipelines</strong>, 
-                        <strong>multi-agent architectures</strong>, <strong>OCR-based document AI</strong>, 
-                        <strong>Text-to-SQL solutions</strong>, and <strong>MCP integrations</strong>. 
-                        I've built enterprise AI products and co-founded <strong>PromptEdge Tech</strong>, 
-                        integrating AI systems into real-world business workflows using 
-                        <strong>Azure AI services</strong> and modern GenAI frameworks.
+                        I specialize in the full GenAI stack &mdash; <span class="text-accent">RAG</span>,
+                        <span class="text-accent">multi-agent orchestration</span>,
+                        <span class="text-accent">LLM fine-tuning</span>,
+                        <span class="text-accent">MCP integrations</span>, and
+                        <span class="text-accent">Document AI</span> &mdash; deployed on
+                        Azure, AWS, and GCP. I co-founded
+                        <span class="text-accent">PromptEdge Tech</span>, an AI product company
+                        delivering GenAI solutions to enterprise clients.
                     </p>
                     <p>
-                        I'm passionate about building <strong>scalable, production-ready AI systems</strong> 
-                        that improve operational efficiency and drive business value. Every system I build 
-                        is designed with performance, reliability, and user experience in mind.
+                        I believe great AI engineering means making complex models
+                        <em>reliable, fast, and useful</em> in production &mdash; not just impressive in demos.
                     </p>
+
+                    <div class="about-chips">
+                        <span class="chip"><i class="fas fa-map-marker-alt"></i> Bengaluru / Hyderabad</span>
+                        <span class="chip"><i class="fas fa-briefcase"></i> Open to Opportunities</span>
+                        <span class="chip"><i class="fas fa-globe"></i> Onsite / Hybrid</span>
+                    </div>
                 </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>GenAI Expert</h3>
-                        <p>Specialized in LLMs, RAG, Multi-Agent Systems, and MCP</p>
+
+                <div class="about-cards reveal">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>GenAI &amp; LLMs</h3>
+                        <p>RAG pipelines, multi-agent systems, prompt engineering &amp; MCP tooling</p>
                     </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Cloud Native</h3>
-                        <p>Azure, AWS, GCP with production deployments</p>
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Native AI</h3>
+                        <p>Azure OpenAI, AWS SageMaker, GCP Vertex AI — production deployments</p>
                     </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Impact Driven</h3>
-                        <p>40% efficiency gains, 30% system improvements</p>
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Impact-Driven</h3>
+                        <p>40% efficiency gains, 30% latency reduction, 90% context retention</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Builder</h3>
+                        <p>Co-founded PromptEdge Tech — shipping real AI products to real users</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section section-dark">
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">02</span>
-                <h2 class="section-title">Work Experience</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>02 &mdash; Experience</span>
             </div>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Co-Founder &amp; AI Engineer</h3>
-                                <span class="company">PromptEdge Tech</span>
+            <h2 class="section-heading reveal">Where I've Worked</h2>
+
+            <div class="timeline">
+                <!-- PromptEdge -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <span class="timeline-role">Co-Founder &amp; AI Engineer</span>
+                                <span class="timeline-company">PromptEdge Tech</span>
                             </div>
-                            <span class="duration">2025 &mdash; Present</span>
+                            <span class="timeline-period">
+                                <i class="fas fa-circle timeline-active-dot"></i>
+                                2025 &mdash; Present
+                            </span>
                         </div>
-                        <ul class="experience-details">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Co-founded an <strong>AI product company</strong> delivering GenAI solutions to enterprise clients
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Built <strong>MCP (Model Context Protocol) integrations</strong> and agentic AI tooling using Agno framework
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Developed <strong>text-to-video pipeline</strong> using open-source models for media automation
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Architected and shipped full-stack TypeScript web platform for AI service delivery
-                            </li>
+                        <ul class="timeline-list">
+                            <li>Co-founded an AI product company delivering GenAI solutions to enterprise clients</li>
+                            <li>Built <strong>MCP (Model Context Protocol) integrations</strong> and agentic workflows using the Agno framework</li>
+                            <li>Developed <strong>text-to-video pipeline</strong> using open-source diffusion models for media automation</li>
+                            <li>Architected and shipped a full-stack <strong>TypeScript web platform</strong> for AI service delivery</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>TypeScript</span><span>Agno</span><span>MCP</span><span>GenAI</span>
+                        </div>
                     </div>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <div>
-                                <h3>AI Engineer (Full-Time)</h3>
-                                <span class="company">Sereno, Mumbai</span>
+
+                <!-- Sereno -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <span class="timeline-role">AI Engineer (Full-Time)</span>
+                                <span class="timeline-company">Sereno &mdash; Mumbai</span>
                             </div>
-                            <span class="duration">Jan 2025 &mdash; Dec 2025</span>
+                            <span class="timeline-period">Jan 2025 &mdash; Dec 2025</span>
                         </div>
-                        <ul class="experience-details">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Built and deployed <strong>AI-driven enterprise solutions</strong> with focus on 
-                                <strong>agentic AI systems</strong>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Designed <strong>RAG-based multi-agent pipelines</strong>, reducing manual query 
-                                handling by <strong>40%</strong>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Optimized <strong>Azure AI Search + Azure SQL</strong> integrations for faster 
-                                analytics and improved query resolution
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Mentored interns on <strong>LLM system design</strong> and 
-                                <strong>cloud-scale AI deployment</strong> best practices
-                            </li>
+                        <ul class="timeline-list">
+                            <li>Built and deployed <strong>AI-driven enterprise solutions</strong> with focus on agentic AI systems</li>
+                            <li>Designed <strong>RAG-based multi-agent pipelines</strong>, reducing manual query handling by <strong>40%</strong></li>
+                            <li>Optimized <strong>Azure AI Search + Azure SQL</strong> integrations for faster analytics</li>
+                            <li>Mentored interns on LLM system design and cloud-scale AI deployment best practices</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span>LangGraph</span><span>Azure OpenAI</span><span>Azure SQL</span><span>RAG</span><span>Multi-Agent</span>
+                        </div>
                     </div>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <div>
-                                <h3>AI Engineer Intern</h3>
-                                <span class="company">NxtGen Cloud Services</span>
+
+                <!-- NxtGen -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <span class="timeline-role">AI Engineer Intern</span>
+                                <span class="timeline-company">NxtGen Cloud Services</span>
                             </div>
-                            <span class="duration">Jul 2024 &mdash; Dec 2024</span>
+                            <span class="timeline-period">Jul 2024 &mdash; Dec 2024</span>
                         </div>
-                        <ul class="experience-details">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Developed and deployed <strong>cloud-native AI models</strong>, improving system 
-                                efficiency by <strong>30%</strong>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Built <strong>API-driven ML pipelines using FastAPI</strong>, reducing inference 
-                                latency by <strong>40%</strong>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Automated <strong>model monitoring and versioning</strong> in production environments
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Worked across <strong>Docker, Kubernetes, AWS, Azure, GCP, SageMaker, and Vertex AI</strong>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                Built <strong>Document AI pipelines</strong> using 
-                                <strong>Azure Document Intelligence + OpenAI embeddings</strong>, integrated with 
-                                <strong>Azure Cognitive Search</strong>
-                            </li>
+                        <ul class="timeline-list">
+                            <li>Deployed <strong>cloud-native AI models</strong>, improving system efficiency by <strong>30%</strong></li>
+                            <li>Built <strong>FastAPI ML pipelines</strong>, reducing inference latency by <strong>40%</strong></li>
+                            <li>Built <strong>Document AI pipelines</strong> using Azure Document Intelligence + OpenAI embeddings</li>
+                            <li>Worked across Docker, Kubernetes, AWS, Azure, GCP, SageMaker, and Vertex AI</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span>FastAPI</span><span>Docker</span><span>Azure</span><span>AWS</span><span>GCP</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">03</span>
-                <h2 class="section-title">Featured Projects</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>03 &mdash; Projects</span>
             </div>
+            <h2 class="section-heading reveal">Things I've Built</h2>
+
             <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-database"></i>
+
+                <!-- Featured -->
+                <div class="project-card project-featured reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span class="project-featured-badge">&#9733; Featured</span>
                         </div>
-                        <div class="project-badge">Featured</div>
-                    </div>
-                    <h3>Enterprise Multi-Agent Text-to-SQL System</h3>
-                    <p>Designed a <strong>6-agent Text-to-SQL framework</strong> converting natural language queries 
-                    into optimized SQL. Integrated with <strong>Azure SQL, Azure AI Search, and Cosmos DB</strong>. 
-                    Enabled business users to query complex enterprise data without SQL knowledge.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>LangGraph</span>
-                        <span>Azure OpenAI</span>
-                        <span>Azure SQL</span>
-                        <span>Cosmos DB</span>
-                    </div>
-                    <div class="project-impact">
-                        <div class="impact-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>40% Query Reduction</span>
+                        <h3>Enterprise Multi-Agent Text-to-SQL</h3>
+                        <p>A <strong>6-agent framework</strong> that converts natural language into optimized SQL queries. Business users can interrogate complex enterprise data in plain English — no SQL knowledge needed.</p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-arrow-trend-up"></i> 40% query reduction</span>
+                        </div>
+                        <div class="project-stack">
+                            <span>Python</span><span>LangGraph</span><span>Azure OpenAI</span><span>Azure SQL</span><span>Cosmos DB</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-plug"></i>
+                <!-- MCP -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-plug"></i></div>
+                            <a href="https://github.com/Alexpaul15/mcp" target="_blank" class="project-gh-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
-                        <a href="https://github.com/Alexpaul15/mcp" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <h3>MCP Integration Framework</h3>
-                    <p>Built a <strong>Model Context Protocol (MCP) integration</strong> layer enabling LLMs to interact 
-                    with external tools and APIs through a standardized protocol. Enables seamless tool-calling 
-                    for autonomous AI agents.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>MCP</span>
-                        <span>LLM Tooling</span>
-                        <span>Agentic AI</span>
+                        <h3>MCP Integration Framework</h3>
+                        <p>Model Context Protocol integration layer enabling LLMs to call external tools via a standardized protocol — the backbone of modern agentic AI.</p>
+                        <div class="project-stack">
+                            <span>Python</span><span>MCP</span><span>LLM Tooling</span><span>Agentic AI</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-robot"></i>
+                <!-- Agno -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-robot"></i></div>
+                            <a href="https://github.com/Alexpaul15/Agno" target="_blank" class="project-gh-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
-                        <a href="https://github.com/Alexpaul15/Agno" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <h3>Agno Multi-Agent Framework</h3>
-                    <p>Implemented <strong>Agno-powered multi-agent workflows</strong> for complex AI automation tasks. 
-                    Leverages the Agno framework to orchestrate multiple specialized agents that collaborate 
-                    to complete enterprise tasks autonomously.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Agno</span>
-                        <span>Multi-Agent</span>
-                        <span>Automation</span>
+                        <h3>Agno Multi-Agent Framework</h3>
+                        <p>Agno-powered multi-agent workflows for complex AI automation. Multiple specialized agents collaborate to complete enterprise tasks autonomously.</p>
+                        <div class="project-stack">
+                            <span>Python</span><span>Agno</span><span>Multi-Agent</span><span>Automation</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-file-invoice"></i>
+                <!-- Invoice -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-file-invoice"></i></div>
                         </div>
-                    </div>
-                    <h3>Invoice Extraction Pipeline</h3>
-                    <p>Built an end-to-end <strong>intelligent invoice extraction pipeline</strong> using OCR and LLMs 
-                    to parse, classify, and extract structured data from invoices. Drastically reduces 
-                    manual data-entry overhead for accounting workflows.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OCR</span>
-                        <span>Azure Document Intelligence</span>
-                        <span>OpenAI</span>
+                        <h3>Invoice Extraction Pipeline</h3>
+                        <p>Intelligent invoice parsing using OCR and LLMs to extract structured data from any invoice format — drastically cuts manual data-entry overhead.</p>
+                        <div class="project-stack">
+                            <span>Python</span><span>Azure Doc Intelligence</span><span>OpenAI</span><span>OCR</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-video"></i>
+                <!-- Text to Video -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-film"></i></div>
+                            <a href="https://github.com/Alexpaul15/text-to-video" target="_blank" class="project-gh-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
-                        <a href="https://github.com/Alexpaul15/text-to-video" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <h3>Text-to-Video Generator</h3>
-                    <p>Convert text prompts into video using <strong>open-source generative models</strong>. 
-                    Enables automated media content creation for marketing and media companies without 
-                    expensive proprietary APIs.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Diffusion Models</span>
-                        <span>Hugging Face</span>
-                        <span>Video AI</span>
+                        <h3>Text-to-Video Generator</h3>
+                        <p>Convert text prompts into video using open-source diffusion models — automated media creation without expensive proprietary APIs.</p>
+                        <div class="project-stack">
+                            <span>Python</span><span>Diffusion Models</span><span>Hugging Face</span><span>Video AI</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-briefcase"></i>
+                <!-- Naukri Bot -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-briefcase"></i></div>
+                            <a href="https://github.com/Alexpaul15/naukri_bot" target="_blank" class="project-gh-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
-                        <a href="https://github.com/Alexpaul15/naukri_bot" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <h3>Naukri Job Application Bot</h3>
-                    <p><strong>Automated job application bot</strong> for Naukri.com that intelligently applies to 
-                    matching job listings. Uses browser automation and AI-based profile matching to 
-                    streamline the job search process.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Selenium</span>
-                        <span>Automation</span>
-                        <span>AI Matching</span>
+                        <h3>Naukri Job Application Bot</h3>
+                        <p>Automated job application bot for Naukri.com — intelligently applies to matching listings using browser automation and AI-based profile matching.</p>
+                        <div class="project-stack">
+                            <span>Python</span><span>Selenium</span><span>Automation</span><span>AI Matching</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-file-pdf"></i>
+                <!-- RAG -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-memory"></i></div>
                         </div>
-                    </div>
-                    <h3>Azure Document Intelligence OCR Pipeline</h3>
-                    <p>Built an end-to-end <strong>OCR + embedding pipeline</strong> for complex, image-based PDFs. 
-                    Implemented <strong>semantic chunking</strong>, embeddings, and indexing into 
-                    <strong>Azure Cognitive Search</strong>. Enabled accurate document-based question answering.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Azure Document Intelligence</span>
-                        <span>OpenAI Embeddings</span>
-                        <span>Azure AI Search</span>
+                        <h3>Autonomous RAG with Memory</h3>
+                        <p>Agent-based RAG system using LangChain Memory, GPT-4, and ChromaDB achieving <strong>90% context retention</strong> across multi-turn conversations.</p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-brain"></i> 90% context retention</span>
+                        </div>
+                        <div class="project-stack">
+                            <span>LangChain</span><span>GPT-4</span><span>ChromaDB</span><span>Memory</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-language"></i>
+                <!-- ASR -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-top">
+                            <div class="project-icon-wrap"><i class="fas fa-waveform-lines"></i></div>
                         </div>
-                    </div>
-                    <h3>ASR &rarr; LLM &rarr; TTS Language Translation</h3>
-                    <p>Built an AI pipeline converting <strong>Kannada audio to Hindi audio</strong>. Used 
-                    ASR &rarr; LLM &rarr; TTS with open-source Hugging Face models. Improved translation 
-                    accuracy through advanced prompting strategies.</p>
-                    <div class="project-tech">
-                        <span>Hugging Face</span>
-                        <span>ASR</span>
-                        <span>TTS</span>
-                        <span>LLM</span>
+                        <h3>ASR &rarr; LLM &rarr; TTS Pipeline</h3>
+                        <p>End-to-end Kannada-to-Hindi audio translation using open-source Hugging Face models — ASR transcribes, LLM translates, TTS synthesizes.</p>
+                        <div class="project-stack">
+                            <span>Hugging Face</span><span>ASR</span><span>TTS</span><span>LLM</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-memory"></i>
-                        </div>
-                    </div>
-                    <h3>Autonomous RAG System with Memory</h3>
-                    <p>Built an <strong>agent-based RAG system</strong> using <strong>LangChain Memory, GPT-4, 
-                    and ChromaDB</strong>. Achieved <strong>90% context retention</strong> across multi-turn 
-                    conversations.</p>
-                    <div class="project-tech">
-                        <span>LangChain</span>
-                        <span>GPT-4</span>
-                        <span>ChromaDB</span>
-                        <span>Memory</span>
-                    </div>
-                    <div class="project-impact">
-                        <div class="impact-item">
-                            <i class="fas fa-brain"></i>
-                            <span>90% Context Retention</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="github-cta">
-                <a href="https://github.com/Alexpaul15" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+            <div class="projects-more reveal">
+                <a href="https://github.com/Alexpaul15" target="_blank" class="btn-outline">
                     <i class="fab fa-github"></i>
-                    <span>View All Projects on GitHub</span>
+                    See all on GitHub
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section section-dark">
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">04</span>
-                <h2 class="section-title">Skills &amp; Expertise</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>04 &mdash; Skills</span>
             </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">C</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
+            <h2 class="section-heading reveal">My Tech Stack</h2>
+
+            <div class="skills-grid">
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
                         <i class="fas fa-brain"></i>
                         <h3>Generative AI &amp; LLMs</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Large Language Models</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">Multi-Agent Systems</span>
-                        <span class="skill-tag">Text-to-SQL</span>
-                        <span class="skill-tag">Autonomous Agents</span>
-                        <span class="skill-tag">Embeddings</span>
-                        <span class="skill-tag">MCP</span>
+                    <div class="skill-pills">
+                        <span>RAG Pipelines</span><span>Multi-Agent Systems</span>
+                        <span>Prompt Engineering</span><span>Text-to-SQL</span>
+                        <span>Embeddings</span><span>MCP</span><span>Autonomous Agents</span>
+                        <span>LLM Fine-Tuning</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-header">
+
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
                         <i class="fas fa-layer-group"></i>
                         <h3>Frameworks &amp; Libraries</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">Agno</span>
-                        <span class="skill-tag">Semantic Kernel</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">Scikit-learn</span>
+                    <div class="skill-pills">
+                        <span>LangChain</span><span>LangGraph</span><span>Agno</span>
+                        <span>Semantic Kernel</span><span>Hugging Face</span>
+                        <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-header">
+
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
                         <i class="fas fa-cloud"></i>
                         <h3>Cloud &amp; AI Platforms</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Microsoft Azure</span>
-                        <span class="skill-tag">Azure OpenAI</span>
-                        <span class="skill-tag">Azure AI Search</span>
-                        <span class="skill-tag">Azure Document Intelligence</span>
-                        <span class="skill-tag">Azure SQL</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Google Cloud Platform</span>
+                    <div class="skill-pills">
+                        <span>Azure OpenAI</span><span>Azure AI Search</span>
+                        <span>Azure Doc Intelligence</span><span>Azure SQL</span>
+                        <span>AWS SageMaker</span><span>GCP Vertex AI</span>
+                        <span>Cosmos DB</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Deployment &amp; DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">CI/CD</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
+
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
                         <i class="fas fa-database"></i>
-                        <h3>Data &amp; Vector DBs</h3>
+                        <h3>Vector Databases</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">FAISS</span>
-                        <span class="skill-tag">ChromaDB</span>
-                        <span class="skill-tag">Pinecone</span>
-                        <span class="skill-tag">Cosmos DB</span>
-                        <span class="skill-tag">LangChain Vector Stores</span>
+                    <div class="skill-pills">
+                        <span>FAISS</span><span>ChromaDB</span><span>Pinecone</span>
+                        <span>Cosmos DB Vector</span><span>Azure AI Search</span>
+                    </div>
+                </div>
+
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages &amp; APIs</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span>Python</span><span>TypeScript</span><span>SQL</span>
+                        <span>Java</span><span>FastAPI</span><span>Flask</span><span>REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-block reveal">
+                    <div class="skill-block-header">
+                        <i class="fas fa-server"></i>
+                        <h3>DevOps &amp; Infrastructure</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span>Docker</span><span>Kubernetes</span><span>CI/CD</span>
+                        <span>GitHub Actions</span><span>Model Monitoring</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="section">
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certs" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">05</span>
-                <h2 class="section-title">Resume</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>05 &mdash; Certifications</span>
             </div>
-            <div class="resume-content">
-                <div class="resume-card">
-                    <div class="resume-icon-wrapper">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3>Download My Resume</h3>
-                    <p>Get a comprehensive overview of my experience, education, and achievements in PDF format</p>
-                    <a href="Pasala_Paul_Alex_Samuel_John_AI_Engineer.pdf" download class="btn btn-primary btn-large">
-                        <i class="fas fa-download"></i>
-                        <span>Download PDF Resume</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-heading reveal">Credentials</h2>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">06</span>
-                <h2 class="section-title">Certifications</h2>
-            </div>
-            <div class="certifications-grid">
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fab fa-aws"></i>
-                    </div>
-                    <h3>AWS Certified Machine Learning</h3>
+            <div class="certs-row">
+                <div class="cert-card reveal">
+                    <i class="fab fa-aws cert-icon"></i>
+                    <span>AWS Certified<br>Machine Learning</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>Microsoft Azure AI Fundamentals</h3>
+                <div class="cert-card reveal">
+                    <i class="fab fa-microsoft cert-icon"></i>
+                    <span>Microsoft Azure<br>AI Fundamentals</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <h3>Google Cloud AI Engineer</h3>
+                <div class="cert-card reveal">
+                    <i class="fab fa-google cert-icon"></i>
+                    <span>Google Cloud<br>AI Engineer</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Hugging Face Agent Tools</h3>
+                <div class="cert-card reveal">
+                    <i class="fas fa-robot cert-icon"></i>
+                    <span>Hugging Face<br>Agent Tools</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Robo Coupler Certification</h3>
+                <div class="cert-card reveal">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <span>Robo Coupler<br>Certification</span>
                 </div>
             </div>
-            <div class="certificates-link">
-                <a href="https://drive.google.com/drive/folders/1oP3qjHRA7P6P2WFu1QMyJ_jOK5nQch0X" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+
+            <div class="certs-cta reveal">
+                <a href="https://drive.google.com/drive/folders/1oP3qjHRA7P6P2WFu1QMyJ_jOK5nQch0X" target="_blank" class="btn-outline">
                     <i class="fab fa-google-drive"></i>
-                    <span>View All Certificates on Google Drive</span>
+                    View All Certificates
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">07</span>
-                <h2 class="section-title">Let's Connect</h2>
+            <div class="section-label reveal">
+                <span class="section-label-line"></span>
+                <span>06 &mdash; Contact</span>
             </div>
-            <div class="contact-content">
-                <p class="contact-intro">
-                    I'm open to <strong>AI Engineer / Generative AI Engineer</strong> opportunities 
-                    and prefer <strong>onsite or hybrid roles</strong>. Let's build something amazing together!
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/paul-alex-samuel-pasala-735a9526b" target="_blank" class="social-link linkedin">
-                        <div class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="social-info">
-                            <span class="social-label">LinkedIn</span>
-                            <span class="social-handle">Connect with me</span>
-                        </div>
-                        <i class="fas fa-arrow-right social-arrow"></i>
-                    </a>
-                    <a href="https://github.com/Alexpaul15" target="_blank" class="social-link github">
-                        <div class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="social-info">
-                            <span class="social-label">GitHub</span>
-                            <span class="social-handle">@Alexpaul15</span>
-                        </div>
-                        <i class="fas fa-arrow-right social-arrow"></i>
-                    </a>
-                    <a href="mailto:paul.alexsamuel17@gmail.com" class="social-link email">
-                        <div class="social-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="social-info">
-                            <span class="social-label">Email</span>
-                            <span class="social-handle">paul.alexsamuel17@gmail.com</span>
-                        </div>
-                        <i class="fas fa-arrow-right social-arrow"></i>
-                    </a>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:paul.alexsamuel17@gmail.com">paul.alexsamuel17@gmail.com</a>
+            <h2 class="section-heading reveal">Let's Build Together</h2>
+            <p class="contact-sub reveal">
+                Open to <strong>AI Engineer / Generative AI Engineer</strong> roles.
+                Prefer <strong>onsite or hybrid</strong>. Always up for interesting problems.
+            </p>
+
+            <div class="contact-grid">
+                <a href="mailto:paul.alexsamuel17@gmail.com" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-card-body">
+                        <span class="contact-card-label">Email</span>
+                        <span class="contact-card-value">paul.alexsamuel17@gmail.com</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+917093317743">+91 7093317743</a>
+                    <i class="fas fa-arrow-right contact-card-arrow"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/paul-alex-samuel-pasala-735a9526b" target="_blank" class="contact-card reveal">
+                    <div class="contact-card-icon linkedin"><i class="fab fa-linkedin"></i></div>
+                    <div class="contact-card-body">
+                        <span class="contact-card-label">LinkedIn</span>
+                        <span class="contact-card-value">paul-alex-samuel-pasala</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Bengaluru / Hyderabad, India</span>
+                    <i class="fas fa-arrow-right contact-card-arrow"></i>
+                </a>
+
+                <a href="https://github.com/Alexpaul15" target="_blank" class="contact-card reveal">
+                    <div class="contact-card-icon github"><i class="fab fa-github"></i></div>
+                    <div class="contact-card-body">
+                        <span class="contact-card-label">GitHub</span>
+                        <span class="contact-card-value">@Alexpaul15</span>
                     </div>
-                </div>
+                    <i class="fas fa-arrow-right contact-card-arrow"></i>
+                </a>
+
+                <a href="tel:+917093317743" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-card-body">
+                        <span class="contact-card-label">Phone</span>
+                        <span class="contact-card-value">+91 70933 17743</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-card-arrow"></i>
+                </a>
+            </div>
+
+            <div class="contact-resume reveal">
+                <a href="Pasala_Paul_Alex_Samuel_John_AI_Engineer.pdf" download class="btn-primary-lg">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Pasala Paul Alex Samuel John. Built with passion for AI.</p>
+        <div class="footer-container">
+            <span class="footer-logo">
+                <span class="logo-bracket">&lt;</span>PaulAlex<span class="logo-bracket">/&gt;</span>
+            </span>
+            <p>&copy; 2026 Pasala Paul Alex Samuel John &mdash; Built with passion for AI.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Alexpaul15" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/paul-alex-samuel-pasala-735a9526b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:paul.alexsamuel17@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
