@@ -806,6 +806,59 @@ body {
 }
 .footer-links a:hover { color: var(--indigo); }
 
+/* ---- TIMELINE EXTRAS ---- */
+.timeline-via {
+    font-size: .875rem; font-weight: 400;
+    color: var(--text-faint);
+}
+.timeline-summary {
+    font-size: .9375rem; color: var(--text-muted);
+    line-height: 1.65; margin-bottom: 1rem;
+    padding: .75rem 1rem;
+    background: rgba(99,102,241,.06);
+    border-left: 3px solid var(--indigo);
+    border-radius: 0 8px 8px 0;
+}
+
+/* ---- EDUCATION ---- */
+.edu-card {
+    display: flex; align-items: flex-start; gap: 1.75rem;
+    padding: 2.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(16px);
+    max-width: 820px;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+.edu-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--glow);
+    transform: translateY(-4px);
+}
+.edu-icon {
+    width: 60px; height: 60px; flex-shrink: 0;
+    background: var(--gradient);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: #fff;
+    box-shadow: 0 8px 24px rgba(99,102,241,.35);
+}
+.edu-body { display: flex; flex-direction: column; gap: .4rem; }
+.edu-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--text);
+}
+.edu-spec { color: var(--indigo); }
+.edu-school {
+    font-size: .9375rem; color: var(--text-muted);
+}
+.edu-year {
+    font-size: .8125rem; color: var(--text-faint);
+    font-family: var(--font-mono);
+}
+
 /* ---- REVEAL ANIMATION ---- */
 .reveal {
     opacity: 0;
